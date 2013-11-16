@@ -64,9 +64,17 @@ structure.item.subitem_N - подэлемент 3
     "item":{
         "image_field_1": "image_1.jpg",
         "image_field_2": "image_2.jpg",
-        structure.item.thumbnails = [
-            { "field": "image_field_1", "width": 100, "height": 80 },
-            { "field": "image_field_2", "width": 150, "height": 110 }
+        "thumbnails": [
+            {
+                "field": "image_field_1",
+                "width": 100,
+                "height": 80
+            },
+            {
+                "field": "image_field_2",
+                "width": 150,
+                "height": 110
+            }
         ]
     }
 }
