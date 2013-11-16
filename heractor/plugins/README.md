@@ -27,13 +27,32 @@ Build Menu (buildmenu)
 Вид/Деталь (viewdetail)
 -----------------------
 
-Формирует подэлементы в меню для формирования view/detail элементов
 
+Формирует подэлементы в меню для формирования view/detail элементов из объекта:
+"data": "data.json"
+
+(требуется наличие subitem_template для указания шаблона детального вида)
+
+Добавит в структуру:
 structure.item.object_list - список элементов
-structure.item.subitem_1 - подэлемент
+structure.item.subitem_1 - подэлемент 1
+structure.item.subitem_2 - подэлемент 2
+...
+structure.item.subitem_N - подэлемент 3
 
 
+пример структуры:
 
-
+```json
+{
+    "detail":{
+        ...
+        "data": "data.json",
+        "template": "data_list.html",
+        "detail_template": "data_detail.html"
+        ...
+    }
+}
+```
 
 
