@@ -18,6 +18,9 @@ def preparation_config(config_file, config_section, extra=[]):
 
 
 def v(text):
+    """
+    Verbose
+    """
     global verbose
     if verbose:
         print text
@@ -31,7 +34,7 @@ def usage():
  Help:
     --help          display help
     --config=       select config file (default: config.json)
-    --section=      config file section (default:main)
+    --section=      config file section (default: main)
     --verbose       verbose mode
     ''')
 
