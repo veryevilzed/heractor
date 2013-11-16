@@ -108,7 +108,7 @@ main, production, debug - секции файла включаются при с
 * include - добавить данные из файла (для структурных форматов можно указывать группу "data.json about"
 * include_format - формат данных (json, yaml, rest)
 * title / subtitle - костанты для шаблонов
-* folder_name - имя паталога для subitems ( по умолчанию берется key )
+* folder_name - имя каталога для subitems ( по умолчанию берется key )
 
 Структура сайта:
 
