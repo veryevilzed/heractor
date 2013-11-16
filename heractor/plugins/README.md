@@ -59,9 +59,15 @@ structure.item.subitem_N - подэлемент 3
 Ищет и приводит изображение к нужному формату
 Формат: из "image.jpg" в "image_H_W.jpg"
 
-structure.item.image_field_1 = "image_1.jpg"
-structure.item.image_field_2 = "image_2.jpg"
-structure.item.thumbnails = [
-    { "field": "image_field_1", "width": 100, "height": 80 },
-    { "field": "image_field_2", "width": 150, "height": 110 }
-]
+```json
+{
+    "item":{
+        "image_field_1": "image_1.jpg",
+        "image_field_2": "image_2.jpg",
+        structure.item.thumbnails = [
+            { "field": "image_field_1", "width": 100, "height": 80 },
+            { "field": "image_field_2", "width": 150, "height": 110 }
+        ]
+    }
+}
+```
