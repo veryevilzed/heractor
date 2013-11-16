@@ -1,10 +1,8 @@
 
-
 Дополнения
 ==========
 
-
-Build Menu (buildmenu)
+Меню (buildmenu)
 ----------------------
 
 Посмтроения меню в объект env.menu
@@ -15,6 +13,7 @@ Build Menu (buildmenu)
 * navigation - видимость элемента в навигации (True/False)
 
 
+
 Навигационные цепочки (breadcumbs)
 ----------------------------------
 
@@ -23,10 +22,8 @@ Build Menu (buildmenu)
 
 
 
-
 Вид/Деталь (viewdetail)
 -----------------------
-
 
 Формирует подэлементы в меню для формирования view/detail элементов из объекта:
 "data": "data.json"
@@ -49,10 +46,15 @@ structure.item.subitem_N - подэлемент 3
         ...
         "data": "data.json",
         "template": "data_list.html",
-        "detail_template": "data_detail.html"
+        "detail_template": "data_detail.html",
         ...
     }
 }
 ```
 
 
+Минимизатор изображений
+-----------------------
+
+Ищет и приводит изображение к нужному формату
+Формат: из "image.jpg" в "image_H_W.jpg"
