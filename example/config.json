@@ -1,0 +1,10 @@
+{
+    "main":{
+        "path": "../example/",
+        "static_root": "../static/",
+        "sitemap": "sitemap.json",
+        "global": {
+            "static": "./static/"
+        }
+    }
+}
