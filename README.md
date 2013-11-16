@@ -85,13 +85,13 @@ main, production, debug - секции файла включаются при с
                 "subtitle": "Контактная информация",
                 "name": "Главная",
                 "navigation": True
-            },
-            "hidden": {
+            }
+        },
+        "hidden": {
                 "template": "hidden.html",
                 "subtitle": "Скрытая страница",
                 "name": "Скрытая",
                 "navigation": False
-            }
         }
     }
 }
@@ -102,11 +102,22 @@ main, production, debug - секции файла включаются при с
 Элемент это имя раздела (index.html, about.html, contact.html, hidden.html)
 
 * template - имя шаблона
+* skip - пропустить сборку этого раздела
 * name - имя страницы (используется в дополнениях таких как menu)
 * navigation - показывать ли в навигации
 * include - добавить данные из файла (для структурных форматов можно указывать группу "data.json about"
 * include_format - формат данных (json, yaml, rest)
 * title / subtitle - костанты для шаблонов
+* folder_name - имя паталога для subitems ( по умолчанию берется key )
+
+Структура сайта:
+
+```
+index.html
+hidden.html
+index/about.html
+index/contact.html
+```
 
 
 Фаил данных (data.json):
