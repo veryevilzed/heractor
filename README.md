@@ -14,27 +14,26 @@ HERACTOR v.1.0
 ```json
 {
     "main":{
-        "global":{
-            "static":"/static/"
+        "global": {
+            "static": "/static/"
         }
     },
     "production": {
-        "base":"main"
+        "base": "main"
     },
     "debug": {
-        "base":"production"
+        "base": "production"
     }
 }
 ```
 
 Формат:
+
 ```json
 {
     "section": {
-        "key":"value"
-        ...
+        "key": "value"
     }
-    ...
 }
 ```
 
