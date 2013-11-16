@@ -16,5 +16,5 @@ setup(name='Heractor',
       author_email='dmitry.vysochin@gmail.com',
       url='',
       install_requires=install_requires,
-      packages=['heractor',],
+      packages=['heractor', 'heractor.plugins'],
      )
