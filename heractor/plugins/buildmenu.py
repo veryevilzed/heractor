@@ -5,7 +5,7 @@
 """
 
 
-def before(structure, config, env={}, extra={}):
+def build(structure, config, env={}, extra={}):
     """
     Метод запуска
     """

@@ -14,10 +14,10 @@
 
 
 
-Навигационные цепочки (breadcumbs)
+Навигационные цепочки (breadcrumbs)
 ----------------------------------
 
-Добавляет в структуру объект structure.item.breadcumbs.
+Добавляет в структуру объект structure.item.breadrcumbs.
 Массив элементов: [{ "name": <name>, "link": <link> }]
 
 

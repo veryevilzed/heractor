@@ -5,7 +5,7 @@
 """
 
 
-def before(structure, config, env={}, extra={}):
+def bread(structure, config, env={}, extra={}):
     """
     Метод запуска
     """

@@ -11,8 +11,6 @@ HERACTOR v.1.0
 Конфигурационный фаил (config.json):
 ------------------------------------
 
-
-
 Формат:
 
 ```json
@@ -32,6 +30,10 @@ HERACTOR v.1.0
         "templates": "./templates/",
         "out": "./out/",
         "structure": "./structure.json",
+        "plugins": [
+            "heractor.plugins.buildmenu.build",
+            "heractor.plugins.breadcrumps.build"
+        ],
         "global": {
             "static": "/static/"
         }
@@ -55,6 +57,7 @@ main, production, debug - секции файла включаются при с
 * templates - путь к каталогу с шаблонами (может быть задан как массив)
 * out - пусть куда будет построен сайт
 * structure - путь к карте сайта, параметрам страниц
+* plugins - список дополнений расширяющих шаблоны ( см. /heractor/plugins )
 
 
 Конфигурационный фаил (structure.json):

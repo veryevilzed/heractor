@@ -9,6 +9,9 @@ verbose = False
 
 
 def heract():
+    """
+    Основной метод построения сайта
+    """
     pass
 
 
