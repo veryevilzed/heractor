@@ -31,7 +31,7 @@ HERACTOR v.1.0
         "path": "../example/",
         "templates": "./templates/",
         "out": "./out/",
-        "sitemap": "./sitemap.json",
+        "structure": "./structure.json",
         "global": {
             "static": "/static/"
         }
@@ -54,4 +54,53 @@ main, production, debug - секции файла включаются при с
 * path - путь к корню сайта, чтоб не указывать полные пути (не обязательно)
 * templates - путь к каталогу с шаблонами (может быть задан как массив)
 * out - пусть куда будет построен сайт
-* sitemap - путь к карте сайта, параметрам страниц
+* structure - путь к карте сайта, параметрам страниц
+
+
+Конфигурационный фаил (structure.json):
+---------------------------------------
+
+```json
+{
+    "index": {
+        "template": "index.html",
+        "name": "Главная",
+        "navigation": True,
+        "title": "My First Static Site",
+        "subtitle": "Главная",
+        "subitems": {
+            "about": {
+                "template": "about.html",
+                "name": "Главная",
+                "navigation": True,
+                "subtitle": "О нас",
+                "include": "about.json",
+                "include_format": "json"
+            },
+            "contact": {
+                "template": "contact.html",
+                "subtitle": "Контактная информация",
+                "name": "Главная",
+                "navigation": True
+            },
+            "hidden": {
+                "template": "hidden.html",
+                "subtitle": "Скрытая страница",
+                "name": "Скрытая",
+                "navigation": False
+            }
+        }
+    }
+}
+```
+
+Параметры:
+
+Элемент это имя раздела (index.html, about.html, contact.html, hidden.html)
+
+* template - имя шаблона
+* name - имя страницы (используется в дополнениях таких как menu)
+* navigation - показывать ли в навигации
+* include - добавить данные из файла (для структурных форматов можно указывать группу "data.json about"
+* include_format - формат данных (json, yaml, rest)
+* title / subtitle - костанты для шаблонов
