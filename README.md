@@ -115,6 +115,7 @@ main, production, debug - секции файла включаются при с
 ```json
 {
     "about":{
+        "title": "About",
         "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pretium, purus sed faucibus porttitor,
                  nulla felis ultrices est, at ornare diam magna quis lacus.
                  Phasellus vitae vehicula tellus. Nunc blandit lorem porttitor, consectetur odio in, suscipit elit.
@@ -124,19 +125,18 @@ main, production, debug - секции файла включаются при с
                  Mauris fringilla nulla felis, nec dictum arcu hendrerit in. Integer malesuada placerat ante, et
                  pulvinar ligula molestie in. Ut lacus diam, aliquet id ante vel, sollicitudin scelerisque tortor.
                  Aenean mi turpis, vulputate id aliquet at, malesuada a justo. Aenean sem lacus, vulputate non enim
-                 eget, porta congue odio. Sed ullamcorper neque eu vestibulum volutpat.",
-        "title": "About"
+                 eget, porta congue odio. Sed ullamcorper neque eu vestibulum volutpat."
     },
     "contact":{
+        "title": "Contact",
         "text": "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
                  Nam velit libero, congue vel augue vitae, tincidunt dapibus nunc. Ut molestie neque at nisl
                  vestibulum rutrum et sed dui. Integer luctus est non blandit volutpat. Nam eu blandit sem.
                  Nullam quis feugiat augue. Fusce a dictum lectus. Fusce iaculis a ipsum eget vulputate. Sed
                  consectetur nisl dapibus, bibendum est eu, lobortis diam. Etiam viverra sem nec lacus molestie
                  eleifend. Vivamus nibh quam, iaculis nec blandit et, sollicitudin sed felis. In eu felis vestibulum,
-                 pretium sapien ut, convallis arcu.",
-        "title": "Contact"
-    }
+                 pretium sapien ut, convallis arcu."
 
+    }
 }
 ```
