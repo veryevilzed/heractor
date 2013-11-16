@@ -124,7 +124,7 @@ main, production, debug - секции файла включаются при с
                  Mauris fringilla nulla felis, nec dictum arcu hendrerit in. Integer malesuada placerat ante, et
                  pulvinar ligula molestie in. Ut lacus diam, aliquet id ante vel, sollicitudin scelerisque tortor.
                  Aenean mi turpis, vulputate id aliquet at, malesuada a justo. Aenean sem lacus, vulputate non enim
-                 eget, porta congue odio. Sed ullamcorper neque eu vestibulum volutpat."
+                 eget, porta congue odio. Sed ullamcorper neque eu vestibulum volutpat.",
         "title": "About"
     },
     "contact":{
@@ -134,7 +134,7 @@ main, production, debug - секции файла включаются при с
                  Nullam quis feugiat augue. Fusce a dictum lectus. Fusce iaculis a ipsum eget vulputate. Sed
                  consectetur nisl dapibus, bibendum est eu, lobortis diam. Etiam viverra sem nec lacus molestie
                  eleifend. Vivamus nibh quam, iaculis nec blandit et, sollicitudin sed felis. In eu felis vestibulum,
-                 pretium sapien ut, convallis arcu."
+                 pretium sapien ut, convallis arcu.",
         "title": "Contact"
     }
 
