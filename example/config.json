@@ -2,9 +2,13 @@
     "main":{
         "path": "../example/",
         "static_root": "../static/",
-        "sitemap": "sitemap.json",
+        "structure": "../example/structure.json",
         "global": {
             "static": "./static/"
-        }
+        },
+        "plugins": [
+            "plugins.buildmenu.build",
+            "plugins.breadcrumbs.bread"
+        ]
     }
 }

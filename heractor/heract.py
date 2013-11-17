@@ -2,22 +2,52 @@
 #coding:utf-8
 
 import getopt
-import sys
+import sys, os
 from json import load
+from jinja2 import Environment, FileSystemLoader
 
 verbose = False
 
 
-def heract():
+def plugins(config, structure):
+    if "plugins" in config:
+        if not "global" in config:
+            config["global"] = {}
+
+    def get_method(string_name):
+        _tmp = string_name.split(".")
+        modl = __import__(".".join(_tmp[:-1]))
+        return getattr(getattr(modl, _tmp[-2]), _tmp[-1])
+
+    for path_method in config.get("plugins", []):
+        plugin = get_method(path_method)
+        v("%s (%s) loaded" % (path_method, plugin))
+        plugin(structure, config)
+
+
+def heract(config):
     """
     Основной метод построения сайта
     """
-    pass
+    path = config.get("home_dir", os.path.abspath(os.path.dirname(__file__)))
+    v("Set path %s" % path)
+    v("Load structure %s" % config.get("structure", "structure.json"))
+    structure = load(file(os.path.join(path, config.get("structure", "structure.json"))))
+    jinja_env = Environment(loader=FileSystemLoader(os.path.join(path, config.get("templates", "")), encoding='utf-8'),
+                            autoescape=True)
+
+    plugins(config, structure)
+    v("Config Clobal %s" % config["global"])
 
 
 def preparation_config(config_file, config_section, extra=[]):
+    """
+    Прогружает конфигурационный фаил и пременяет на него все секции
+    """
     v("Load config %s" % config_file)
     config = load(file(config_file))[config_section]
+    return config
+
 
 
 def v(text):
@@ -59,6 +89,7 @@ def main():
             verbose = True
         elif o in ("-h", "--help"):
             usage()
+            sys.exit()
         elif o in ("-c", "--config"):
             config_file = a
         elif o in ("-s", "--section"):
@@ -67,7 +98,8 @@ def main():
             usage()
             sys.exit()
 
-    preparation_config(config_file, config_section)
+    config = preparation_config(config_file, config_section)
+    heract(config)
 
 if __name__ == "__main__":
     main()

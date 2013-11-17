@@ -68,14 +68,14 @@ main, production, debug - секции файла включаются при с
     "index": {
         "template": "index.html",
         "name": "Главная",
-        "navigation": True,
+        "navigation": true,
         "title": "My First Static Site",
         "subtitle": "Главная",
         "subitems": {
             "about": {
                 "template": "about.html",
                 "name": "Главная",
-                "navigation": True,
+                "navigation": true,
                 "subtitle": "О нас",
                 "include": "data.json about",
                 "include_format": "json"
@@ -84,14 +84,14 @@ main, production, debug - секции файла включаются при с
                 "template": "contact.html",
                 "subtitle": "Контактная информация",
                 "name": "Главная",
-                "navigation": True
+                "navigation": true
             }
         },
         "hidden": {
                 "template": "hidden.html",
                 "subtitle": "Скрытая страница",
                 "name": "Скрытая",
-                "navigation": False
+                "navigation": false
         }
     }
 }
