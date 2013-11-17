@@ -2,9 +2,15 @@
 #coding:utf-8
 
 import getopt
-import sys, os
+import sys
+import os
 from json import load
-from jinja2 import Environment, FileSystemLoader
+
+try:
+    from jinja2 import Environment, FileSystemLoader
+except:
+    print "Install Jinja2 templates (pip install jinja2)"
+    sys.exit()
 
 verbose = False
 
@@ -29,15 +35,34 @@ def heract(config):
     """
     Основной метод построения сайта
     """
-    path = config.get("home_dir", os.path.abspath(os.path.dirname(__file__)))
+    #path = config.get("path", os.path.abspath(os.path.dirname(__file__)))
+    path = config.get("path", "")
+    config["path"] = path
     v("Set path %s" % path)
     v("Load structure %s" % config.get("structure", "structure.json"))
     structure = load(file(os.path.join(path, config.get("structure", "structure.json"))))
     jinja_env = Environment(loader=FileSystemLoader(os.path.join(path, config.get("templates", "")), encoding='utf-8'),
                             autoescape=True)
 
-    plugins(config, structure)
-    v("Config Clobal %s" % config["global"])
+    plugins(config, structure) # Подключим модули
+    v("Global:")
+    v(config["global"])
+
+    # Начнем построение
+
+    def build(root, config, jinja_env, henv, url_path, file_path):
+        for key in root:
+            item = root[key]
+            if item.get("skip", False):
+                continue
+            _henv = henv.copy()
+            for hkey in item:
+                _henv[hkey] = item[hkey]
+            if "template" in _henv:
+                f = file(os.path.join(file_path, key+".html"), "w")
+
+    build(structure, config, jinja_env, {}, url_path=config.get("root", "/"),
+          file_path=os.path.join(path, config.get("out", "./")))
 
 
 def preparation_config(config_file, config_section, extra=[]):
@@ -56,7 +81,10 @@ def v(text):
     """
     global verbose
     if verbose:
-        print text
+        if text.__class__ == dict or text.__class__ == list:
+            print repr(text).decode("unicode-escape")
+        else:
+            print text
 
 
 def usage():

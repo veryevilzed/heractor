@@ -1,6 +1,7 @@
 {
     "main":{
         "path": "../example/",
+        "root": "/",
         "static_root": "../static/",
         "structure": "../example/structure.json",
         "global": {
@@ -8,7 +9,7 @@
         },
         "plugins": [
             "plugins.buildmenu.build",
-            "plugins.breadcrumbs.bread"
+            "plugins.structure.build"
         ]
     }
 }
