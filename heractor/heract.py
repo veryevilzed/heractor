@@ -58,8 +58,22 @@ def heract(config):
             _henv = henv.copy()
             for hkey in item:
                 _henv[hkey] = item[hkey]
+
+            page_path = os.path.join(file_path, key+".html")
+
             if "template" in _henv:
-                f = file(os.path.join(file_path, key+".html"), "w")
+                f = file(page_path, "w")
+                _henv["path"] = path + key + ".html"
+                text = jinja_env.get_template(_henv.get("template", ""), globals=config.get("global", {})).render(_henv)
+                f.write(text.encode(encoding="utf-8", errors="strict"))
+                f.close()
+            if "subitems" in item:
+                if not os.path.exists(os.path.join(file_path, item.get("folder", key)+"/")):
+                    os.mkdir(os.path.join(file_path, key+"/"))
+                build(item["subitems"], config, jinja_env, _henv,
+                      url_path=os.path.join(url_path, item.get("folder", key)+"/"),
+                      file_path=os.path.join(file_path, item.get("folder", key)+"/"))
+
 
     build(structure, config, jinja_env, {}, url_path=config.get("root", "/"),
           file_path=os.path.join(path, config.get("out", "./")))
