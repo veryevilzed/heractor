@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 
 import os
-from setuptools import setup, find_packages
+import setuptools
 here = os.path.abspath(os.path.dirname(__file__))
+from distutils.core import setup
 
 
 install_requires = [
@@ -17,4 +18,8 @@ setup(name='Heractor',
       url='',
       install_requires=install_requires,
       packages=['heractor', 'heractor.plugins'],
+      entry_points = {
+        'console_scripts': [
+            'heract = heractor.heract:main']
+        }
      )

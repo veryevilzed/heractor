@@ -74,7 +74,6 @@ def heract(config):
                       url_path=os.path.join(url_path, item.get("folder", key)+"/"),
                       file_path=os.path.join(file_path, item.get("folder", key)+"/"))
 
-
     build(structure, config, jinja_env, {}, url_path=config.get("root", "/"),
           file_path=os.path.join(path, config.get("out", "./")))
 
