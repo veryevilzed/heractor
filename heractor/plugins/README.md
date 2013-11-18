@@ -63,6 +63,15 @@ structure.item.subitem_N - подэлемент 3
         "data": "data.json",
         "template": "data_list.html",
         "detail_template": "data_detail.html",
+        "pagination": {
+            "object":"object_list",
+            "count": 10,
+            "page_name": "%(key)s_%(paginator.index)s.html"
+        }
+        "detail_fields:{
+            "title": "MyDetailTitle",
+            ...
+        }
         ...
     }
 }

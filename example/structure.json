@@ -34,5 +34,18 @@
         "include": "../README.md",
         "include_format": "text",
         "markdown": ["include"]
+    },
+    "users": {
+        "template": "user_list.html",
+        "object_list_data": "objects.json",
+        "object_list_item": {
+            "navigation": false,
+            "subtitle": "Детальный вид",
+            "template": "user_detail.html"
+        },
+
+        "subtitle": "Пользователи",
+        "name": "Пользователи",
+        "navigation": true
     }
 }

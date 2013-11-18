@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ subtitle }}</h1>
+
+<table class="table">
+    <thead>
+        <tr><th>#</th> <th>Name</th> <th>Age</th> <th>Email</th> <th>Company</th> <th></th> </tr>
+    </thead>
+    <tbody>
+    {% for object in object_list %}
+        <tr>
+            <td>{{ object.id }}</td>
+            <td>{{ object.name }}</td>
+            <td>{{ object.age }}</td>
+            <td>{{ object.email }}</td>
+            <td>{{ object.company }}</td>
+            <td><a href="{{ object.detail_path }}" class="btn">Детально</a></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

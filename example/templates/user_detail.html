@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ subtitle }}</h1>
+
+
+{{ id }}<br/>
+{{ name }}<br/>
+{{ age }}<br/>
+{{ email }}<br/>
+{{ company }}<br/>
+<a href="{{ parent.path }}" class="btn">Назад</a>
+
+{% endblock %}

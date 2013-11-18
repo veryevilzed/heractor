@@ -152,4 +152,4 @@ contact:
 Дополнения (plugins)
 --------------------
 
-* Wait
+см. /heractor/plugins

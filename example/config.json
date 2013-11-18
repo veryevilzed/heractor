@@ -16,7 +16,8 @@
             "plugins.structure.build",
             "plugins.breadcrumbs.build",
             "plugins.include.build",
-            "plugins.markdn.build"
+            "plugins.markdn.build",
+            "plugins.listviewdetail.build"
         ]
     }
 }

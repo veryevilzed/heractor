@@ -6,8 +6,8 @@
 
 import markdown
 
+
 def get_markdown(root, config, path=""):
-    result = []
     for key in root:
         item = root[key]
         if "skip" in item:
@@ -15,7 +15,6 @@ def get_markdown(root, config, path=""):
 
         for field in item.get("markdown", []):
             if field in item:
-                print "MarkDown %s" % item[field]
                 text = unicode(item[field], "utf-8", errors='ignore')
                 item[field] = markdown.markdown(text)
 
