@@ -27,22 +27,23 @@ HERACTOR v.1.0
 {
     "main":{
         "path": "../example/",
-        "templates": "./templates/",
-        "out": "./out/",
-        "structure": "./structure.json",
-        "plugins": [
-            "heractor.plugins.buildmenu.build",
-            "heractor.plugins.breadcrumps.build"
-        ],
+        "root": "file:///Users/name/src/heract/example/out/",
+        "out": "out/",
+        "templates": "templates/",
+        "static_root": "static/",
+        "structure": "../example/structure.json",
         "global": {
-            "static": "/static/"
-        }
-    },
-    "production": {
-        "base": "main"
-    },
-    "debug": {
-        "base": "production"
+            "static": "file:///Users/name/src/heract/example/static/",
+            "root": "file:///Users/name/src/heract/example/out/",
+            "title": "Supper Static Site"
+        },
+        "plugins": [
+            "plugins.buildmenu.build",
+            "plugins.structure.build",
+            "plugins.breadcrumbs.build",
+            "plugins.include.build",
+            "plugins.markdn.build"
+        ]
     }
 }
 ```
@@ -52,7 +53,7 @@ main, production, debug - секции файла включаются при с
 Параметры:
 
 * global - набор глобальных констант, будет доступен в каждом шаблоне, можно вынести пути к статике, заголовки и т.п.
-* base - берет настройки из другой секции и дополняет/перекрывает своими
+* base - берет настройки из другой секции и дополняет/перекрывает своими (не реализовано)
 * path - путь к корню сайта, чтоб не указывать полные пути (не обязательно)
 * templates - путь к каталогу с шаблонами (может быть задан как массив)
 * out - пусть куда будет построен сайт
@@ -67,32 +68,39 @@ main, production, debug - секции файла включаются при с
 {
     "index": {
         "template": "index.html",
+        "slug": "index_page",
         "name": "Главная",
-        "navigation": true,
+        "navigation": false,
         "title": "My First Static Site",
         "subtitle": "Главная",
+        "folder": "sub",
         "subitems": {
             "about": {
                 "template": "about.html",
-                "name": "Главная",
+                "name": "О Нас",
                 "navigation": true,
                 "subtitle": "О нас",
-                "include": "data.json about",
-                "include_format": "json"
+                "include": "data.yaml #about",
+                "include_format": "yaml"
             },
             "contact": {
-                "template": "contact.html",
+                "template": "about.html",
                 "subtitle": "Контактная информация",
-                "name": "Главная",
-                "navigation": true
+                "name": "Контакты",
+                "navigation": true,
+                "include": "data.yaml #contact",
+                "include_format": "yaml"
             }
-        },
-        "hidden": {
-                "template": "hidden.html",
-                "subtitle": "Скрытая страница",
-                "name": "Скрытая",
-                "navigation": false
         }
+    },
+    "hidden": {
+        "template": "about.html",
+        "subtitle": "Скрытая страница",
+        "name": "Скрытая",
+        "navigation": false,
+        "include": "../README.md",
+        "include_format": "text",
+        "markdown": ["include"]
     }
 }
 ```
@@ -108,7 +116,11 @@ main, production, debug - секции файла включаются при с
 * include - добавить данные из файла (для структурных форматов можно указывать группу "data.json about"
 * include_format - формат данных (json, yaml, rest)
 * title / subtitle - костанты для шаблонов
-* folder_name - имя каталога для subitems ( по умолчанию берется key )
+* folder - имя каталога для subitems ( по умолчанию берется key )
+* include - загружает данные из файла
+* include_format - формат данных
+* markdown - поля на которые нужно наложить markdown
+
 
 Структура сайта:
 

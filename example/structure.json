@@ -7,7 +7,6 @@
         "title": "My First Static Site",
         "subtitle": "Главная",
         "folder": "sub",
-
         "subitems": {
             "about": {
                 "template": "about.html",
@@ -35,7 +34,5 @@
         "include": "../README.md",
         "include_format": "text",
         "markdown": ["include"]
-
     }
-
 }
