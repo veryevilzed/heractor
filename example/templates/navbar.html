@@ -15,9 +15,13 @@
 
     <ul class="nav navbar-nav">
             {% for item in menu %}
-                <li {% if item.path == path %}class="active"{% endif %} ><a href="{{ item.path }}">{{ item.name }}</a></li>
+                {% if item.navigation %}
+                <li{% if item.path == path %} class="active"{% endif %}><a href="{{ item.path }}">{{ item.name }}</a></li>
+                {% endif %}
                 {% for subitem in item.subitems %}
-                    <li {% if subitem.path == path %}class="active"{% endif %} ><a href="{{ subitem.path }}">{{ subitem.name }}</a></li>
+                    {% if subitem.navigation %}
+                    <li{% if subitem.path == path %} class="active"{% endif %}><a href="{{ subitem.path }}">{{ subitem.name }}</a></li>
+                    {% endif %}
                 {% endfor %}
             {% endfor %}
     </ul>

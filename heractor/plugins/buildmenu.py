@@ -12,9 +12,6 @@ def get_menu(root, config, path=""):
         if "skip" in item:
             continue
 
-        if not item.get("navigation", True):
-            continue
-
         ri = {
             "slug": item.get("slug", key),
             "name": item.get("name", item.get("title", key)),

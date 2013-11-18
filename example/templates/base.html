@@ -25,6 +25,21 @@
      <div class="header">{% include "navbar.html" %}</div>
      {% block jumbotron %}
      {% endblock %}
+
+    <div class="row marketing">
+        <div class="class="col-lg-12">
+        <ol class="breadcrumb">
+          {% for crumb in breadcrumbs %}
+              {% if loop.last %}
+                <li class="active">{{ crumb.name }}</li>
+              {% else %}
+                <li><a href="{{ crumb.path }}">{{ crumb.name }}</a></li>
+              {% endif %}
+          {% endfor %}
+        </ol>
+        </div>
+    </div>
+
     <div class="row marketing">{% block content %}{% endblock %}</div>
 
     <div id="footer">

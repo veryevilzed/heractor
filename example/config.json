@@ -8,11 +8,13 @@
         "structure": "../example/structure.json",
         "global": {
             "static": "file:///Users/zed/src/heract/example/static/",
-            "root": "file:///Users/zed/src/heract/example/out/"
+            "root": "file:///Users/zed/src/heract/example/out/",
+            "title": "Supper Static Site"
         },
         "plugins": [
             "plugins.buildmenu.build",
-            "plugins.structure.build"
+            "plugins.structure.build",
+            "plugins.breadcrumbs.build"
         ]
     }
 }

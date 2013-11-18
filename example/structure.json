@@ -3,14 +3,15 @@
         "template": "index.html",
         "slug": "index_page",
         "name": "Главная",
-        "navigation": true,
+        "navigation": false,
         "title": "My First Static Site",
         "subtitle": "Главная",
         "folder": "sub",
+
         "subitems": {
             "about": {
                 "template": "about.html",
-                "name": "Главная",
+                "name": "О Нас",
                 "navigation": true,
                 "subtitle": "О нас",
                 "include": "data.json about",
@@ -19,7 +20,7 @@
             "contact": {
                 "template": "about.html",
                 "subtitle": "Контактная информация",
-                "name": "Главная",
+                "name": "Контакты",
                 "navigation": true
             }
         }
