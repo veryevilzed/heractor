@@ -18,5 +18,5 @@ def get_page_info(root, config, path):
 
 def build(structure, config, env={}, extra={}):
     config["global"]["pages"] = {}
-    for item in get_page_info(structure, config, config["path"]):
+    for item in get_page_info(structure, config, config.get("root", "/")):
         config["global"]["pages"][item["slug"]] = item

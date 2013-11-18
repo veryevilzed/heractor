@@ -7,7 +7,8 @@
         "static_root": "static/",
         "structure": "../example/structure.json",
         "global": {
-            "static": "file:///Users/zed/src/heract/example/static/"
+            "static": "file:///Users/zed/src/heract/example/static/",
+            "root": "file:///Users/zed/src/heract/example/out/"
         },
         "plugins": [
             "plugins.buildmenu.build",

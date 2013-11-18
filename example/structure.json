@@ -1,6 +1,7 @@
 {
     "index": {
         "template": "index.html",
+        "slug": "index_page",
         "name": "Главная",
         "navigation": true,
         "title": "My First Static Site",
