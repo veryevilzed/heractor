@@ -230,6 +230,28 @@ breadcrumbs
 последняя страница это текущая
 
 
+
+structure
+---------
+
+Дополнение для построения обратных ссылок на любую страницу сайта
+
+Параметры:
+slug - уникальное имя страницы во всей структуре, не обязательный, будет браться из key
+
+расширяет структуру global объектом pages:
+```
+pages.<slug>.slug
+pages.<slug>.name
+pages.<slug>.path
+
+```
+
+Пример использования в шаблоне:
+```html
+<a href="{{ pages.about.path }}">{{ pages.about.name }}</a>
+```
+
 buildmenu
 ---------
 
@@ -305,5 +327,41 @@ object_list - список объектов
 
 ```
 
+
+Пример шаблона list
+
+```html
+<table class="table">
+    <thead>
+        <tr><th>#</th> <th>Name</th> <th>Age</th> <th>Email</th> <th>Company</th> <th></th> </tr>
+    </thead>
+    <tbody>
+    {% for object in object_list %}
+        <tr>
+            <td>{{ object.id }}</td>
+            <td>{{ object.name }}</td>
+            <td>{{ object.age }}</td>
+            <td>{{ object.email }}</td>
+            <td>{{ object.company }}</td>
+            <td><a href="{{ object.detail_path }}" class="btn">Детально</a></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+```
+
+
+Пример шаблоноа detail
+
+```html
+
+{{ id }}<br/>
+{{ name }}<br/>
+{{ age }}<br/>
+{{ email }}<br/>
+{{ company }}<br/>
+<a href="{{ parent.path }}" class="btn">Назад</a>
+
+```
 
 
