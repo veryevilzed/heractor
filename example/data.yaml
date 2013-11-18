@@ -1,0 +1,13 @@
+about:
+  subtitle: О нас из YAML
+  text: |
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Fusce pretium, purus sed faucibus porttitor,
+    nulla felis ultrices est, at ornare diam magna quis lacus.
+contact:
+  subtitle: Контакты из YAML
+  text: >
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Fusce pretium, purus sed faucibus porttitor.
+
+

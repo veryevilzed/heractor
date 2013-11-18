@@ -14,22 +14,28 @@
                 "name": "О Нас",
                 "navigation": true,
                 "subtitle": "О нас",
-                "include": "data.json about",
-                "include_format": "json"
+                "include": "data.yaml #about",
+                "include_format": "yaml"
             },
             "contact": {
                 "template": "about.html",
                 "subtitle": "Контактная информация",
                 "name": "Контакты",
-                "navigation": true
+                "navigation": true,
+                "include": "data.yaml #contact",
+                "include_format": "yaml"
             }
         }
     },
     "hidden": {
-            "template": "about.html",
-            "subtitle": "Скрытая страница",
-            "name": "Скрытая",
-            "navigation": false
+        "template": "about.html",
+        "subtitle": "Скрытая страница",
+        "name": "Скрытая",
+        "navigation": false,
+        "include": "../README.md",
+        "include_format": "text",
+        "markdown": ["include"]
+
     }
 
 }

@@ -14,7 +14,9 @@
         "plugins": [
             "plugins.buildmenu.build",
             "plugins.structure.build",
-            "plugins.breadcrumbs.build"
+            "plugins.breadcrumbs.build",
+            "plugins.include.build",
+            "plugins.markdn.build"
         ]
     }
 }
