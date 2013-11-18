@@ -52,9 +52,11 @@ def heract(config):
 
     def build(root, config, jinja_env, henv, url_path, file_path):
         for key in root:
+            v("Build key %s" % key)
             item = root[key]
             if item.get("skip", False):
                 continue
+
             _henv = henv.copy()
             for hkey in item:
                 _henv[hkey] = item[hkey]
@@ -69,7 +71,7 @@ def heract(config):
                 f.close()
             if "subitems" in item:
                 if not os.path.exists(os.path.join(file_path, item.get("folder", key)+"/")):
-                    os.mkdir(os.path.join(file_path, key+"/"))
+                    os.mkdir(os.path.join(file_path, item.get("folder", key)+"/"))
                 build(item["subitems"], config, jinja_env, _henv,
                       url_path=os.path.join(url_path, item.get("folder", key)+"/"),
                       file_path=os.path.join(file_path, item.get("folder", key)+"/"))

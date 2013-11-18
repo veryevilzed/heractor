@@ -11,6 +11,10 @@ def get_menu(root, config, path=""):
         item = root[key]
         if "skip" in item:
             continue
+
+        if not item.get("navigation", True):
+            continue
+
         ri = {
             "slug": item.get("slug", key),
             "name": item.get("name", item.get("title", key)),
@@ -21,9 +25,10 @@ def get_menu(root, config, path=""):
         result += [ri]
     return result
 
+
 def build(structure, config, env={}, extra={}):
     """
     Метод запуска
     """
-    config["global"]["menu"] = get_menu(structure, config, config["path"])
+    config["global"]["menu"] = get_menu(structure, config, config.get("root", "/"))
 

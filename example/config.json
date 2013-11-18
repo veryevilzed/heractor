@@ -1,11 +1,13 @@
 {
     "main":{
         "path": "../example/",
-        "root": "/",
-        "static_root": "../static/",
+        "root": "file:///Users/zed/src/heract/example/out/",
+        "out": "out/",
+        "templates": "templates/",
+        "static_root": "static/",
         "structure": "../example/structure.json",
         "global": {
-            "static": "./static/"
+            "static": "file:///Users/zed/src/heract/example/static/"
         },
         "plugins": [
             "plugins.buildmenu.build",

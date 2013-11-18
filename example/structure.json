@@ -16,17 +16,18 @@
                 "include_format": "json"
             },
             "contact": {
-                "template": "contact.html",
+                "template": "about.html",
                 "subtitle": "Контактная информация",
                 "name": "Главная",
                 "navigation": true
             }
-        },
-        "hidden": {
-                "template": "hidden.html",
-                "subtitle": "Скрытая страница",
-                "name": "Скрытая",
-                "navigation": false
         }
+    },
+    "hidden": {
+            "template": "about.html",
+            "subtitle": "Скрытая страница",
+            "name": "Скрытая",
+            "navigation": false
     }
+
 }
