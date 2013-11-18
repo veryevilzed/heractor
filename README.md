@@ -225,7 +225,8 @@ breadcrumbs
             { "name": "page_3", "path": "/path/to/page_3.html" }
         ]
     }
-}```
+}
+```
 
 последняя страница это текущая
 
