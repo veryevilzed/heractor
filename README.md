@@ -240,6 +240,7 @@ structure
 slug - уникальное имя страницы во всей структуре, не обязательный, будет браться из key
 
 расширяет структуру global объектом pages:
+
 ```
 pages.<slug>.slug
 pages.<slug>.name
@@ -248,6 +249,7 @@ pages.<slug>.path
 ```
 
 Пример использования в шаблоне:
+
 ```html
 <a href="{{ pages.about.path }}">{{ pages.about.name }}</a>
 ```
@@ -324,7 +326,6 @@ object_list - список объектов
     "name": "users",
     "path": "../users.html"
 }
-
 ```
 
 
