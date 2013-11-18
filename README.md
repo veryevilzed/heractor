@@ -1,5 +1,5 @@
 
-HERACTOR v.1.0
+HERACTOR v.1.1
 ==============
 
 Исполняемый модуль:
@@ -363,7 +363,12 @@ object_list - список объектов
 {{ email }}<br/>
 {{ company }}<br/>
 <a href="{{ parent.path }}" class="btn">Назад</a>
-
 ```
 
+Скоро!
+======
 
+Дополнения:
+
+* thumbnail - построение привью изображений
+* pagination - постраничное листание для данных object_list
