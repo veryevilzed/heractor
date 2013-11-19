@@ -438,5 +438,21 @@ blog
 
 В корневом элементе все объекты попадают в object_list
 
+Makefile's
+==========
 
-Бкдет создан object-list из
+Примеры Makefile для быстрой работы и публикации.
+
+```Makefile
+
+HERACT=./heractor/heract
+CONFIG=./example/config.json
+
+build:
+    $(HERACT) --config=$(CONFIG) --section=main
+
+releaase:
+    $(HERACT) --config=$(CONFIG) --section=release
+
+```
+
