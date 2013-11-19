@@ -2,6 +2,32 @@
 HERACTOR v.1.1
 ==============
 
+Установка
+---------
+
+Создание виртуального окружения (не обязательно):
+
+```bash
+pip install virtualenv
+virtualenv ./heract
+cd ./heract/
+source ./bin/activate
+git clone http://git.appforge.ru/zed/heract.git ./
+pip install -r ./requirements.txt
+cd ./heractor/
+./heract.py --help
+```
+
+Без виртуального окружения:
+
+```bash
+git clone http://git.appforge.ru/zed/heract.git
+cd ./heract/
+pip install -r ./requirements.txt
+cd ./heractor/
+./heract.py --help
+```
+
 Исполняемый модуль:
 -------------------
 
