@@ -7,7 +7,9 @@ from distutils.core import setup
 
 
 install_requires = [
-    'Jinja2'
+        'Jinja2',
+        'PyYAML',
+        'markdown'
     ]
 
 setup(name='Heractor',
@@ -19,7 +21,8 @@ setup(name='Heractor',
       install_requires=install_requires,
       packages=['heractor', 'heractor.plugins'],
       entry_points = {
-        'console_scripts': [
-            'heract = heractor.heract:main']
+            'console_scripts': [
+                'heract = heractor.heract:main'
+            ]
         }
      )
