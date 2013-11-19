@@ -1,16 +1,5 @@
 {
-    "main":{
-        "path": "../example/",
-        "root": "file:///Users/zed/src/heract/example/out/",
-        "out": "out/",
-        "templates": "templates/",
-        "static_root": "static/",
-        "structure": "../example/structure.json",
-        "global": {
-            "static": "file:///Users/zed/src/heract/example/static/",
-            "root": "file:///Users/zed/src/heract/example/out/",
-            "title": "Supper Static Site"
-        },
+    "base": {
         "plugins": [
             "plugins.buildmenu.build",
             "plugins.structure.build",
@@ -19,5 +8,20 @@
             "plugins.markdn.build",
             "plugins.listviewdetail.build"
         ]
+    },
+    "main":{
+        "path": "../example/",
+        "root": "file:///Users/zed/src/heract/example/out/",
+        "out": "out/",
+        "base": "base",
+        "templates": "templates/",
+        "static_dir": "static/",
+        "structure": "../example/structure.json",
+        "global": {
+            "static": "file:///Users/zed/src/heract/example/static/",
+            "root": "file:///Users/zed/src/heract/example/out/",
+            "title": "Site Example",
+            "debug": "Debug"
+        }
     }
 }

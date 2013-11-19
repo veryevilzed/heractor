@@ -30,7 +30,7 @@ HERACTOR v.1.1
         "root": "file:///Users/name/src/heract/example/out/",
         "out": "out/",
         "templates": "templates/",
-        "static_root": "static/",
+        "static_dir": "static/",
         "structure": "../example/structure.json",
         "global": {
             "static": "file:///Users/name/src/heract/example/static/",
@@ -59,7 +59,7 @@ main, production, debug - секции файла включаются при с
 * out - пусть куда будет построен сайт
 * structure - путь к карте сайта, параметрам страниц
 * plugins - список дополнений расширяющих шаблоны ( см. /heractor/plugins )
-
+* static_dir - путь к статике (для копирования ее в проект)
 
 Конфигурационный фаил (structure.json):
 ---------------------------------------
@@ -365,10 +365,78 @@ object_list - список объектов
 <a href="{{ parent.path }}" class="btn">Назад</a>
 ```
 
+
+thumbnail
+---------
+
+Для создания превью изображений можно использовать imagemagick
+
+Установка:
+
+```
+apt-get install imagemagick
+brew imagemagick
+```
+
+Использование:
+```
+convert -thumbnail 200 abc.png thumb.abc.png
+convert -thumbnail x200 abc.png thumb.abc.png
+```
+
+Снип:
+```bash
+#!/bin/bash
+FILES="$@"
+for i in $FILES
+do
+    echo "Prcoessing image $i ..."
+    /usr/bin/convert -thumbnail 200 $i thumb.$i
+done
+```
+
+
+
+
+
 Скоро!
 ======
 
 Дополнения:
 
-* thumbnail - построение привью изображений
+* blog - построение listviewdetail из каталога статей
 * pagination - постраничное листание для данных object_list
+
+
+
+
+blog
+----
+
+Построение listviewdetail из каталога статей
+
+```json
+{
+
+    ...
+    "blog":{
+        "name":"Главная",
+        "blog_folder":"../blog/",
+        "object_list_item": {
+            "markdown":["text"]
+        }
+    },
+
+```
+
+Параметры:
+* blog_folder - указывает местоположение статей блога
+(расшерение файлов должно быть .txt, .md, .rst, .html, json, yaml)
+
+Для текстовых форматов, таких как .txt, .md, .rst, .html данные попадают в объект "text" в каждом дочернем элементе,
+Для структурных данных, попадают в соответствующее поле
+
+В корневом элементе все объекты попадают в object_list
+
+
+Бкдет создан object-list из

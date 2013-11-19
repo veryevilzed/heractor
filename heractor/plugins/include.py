@@ -35,8 +35,10 @@ def get_datas(root, config, path=""):
                 if section:
                     data = data[section]
 
-                for key in data:
-                    item[key] = data[key]
+                #for key in data:
+                #    item[key] = data[key]
+                item.update(data)
+
             elif data_format in ["text"]:
                 _tmp = file_name.split("#")
                 text = ""

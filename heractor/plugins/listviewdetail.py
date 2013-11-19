@@ -25,8 +25,9 @@ def get_list(root, config, path=""):
             for obj in item["object_list"]:
                 i += 1
                 new_obj = item.get("object_list_item", {}).copy()
-                for k in obj:
-                    new_obj[k] = obj[k]
+                #for k in obj:
+                #    new_obj[k] = obj[k]
+                new_obj.update(obj)
                 new_obj["index"] = i
                 new_obj["parent"] = {
                     "name": item.get("name", item.get("title", key)),

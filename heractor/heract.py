@@ -58,8 +58,9 @@ def heract(config):
                 continue
 
             _henv = henv.copy()
-            for hkey in item:
-                _henv[hkey] = item[hkey]
+            _henv.update(item)
+            #for hkey in item:
+            #    _henv[hkey] = item[hkey]
 
             page_path = os.path.join(file_path, key+".html")
 
@@ -80,12 +81,25 @@ def heract(config):
           file_path=os.path.join(path, config.get("out", "./")))
 
 
+def get_base(base_config, base_section):
+    if "base" in base_config[base_section]:
+        v("Applay base section %s" % base_config[base_section]["base"])
+        config = get_base(base_config, base_config[base_section]["base"])
+    else:
+        config = {}
+
+    config.update(base_config[base_section])
+    #for key in base_config[base_section]:
+    #    config[key] = base_config[base_section][key]
+    return config
+
+
 def preparation_config(config_file, config_section, extra=[]):
     """
     Прогружает конфигурационный фаил и пременяет на него все секции
     """
     v("Load config %s" % config_file)
-    config = load(file(config_file))[config_section]
+    config = get_base(load(file(config_file)), config_section)
     return config
 
 
