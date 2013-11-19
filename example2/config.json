@@ -1,0 +1,42 @@
+{
+    "base": {
+        "plugins": [
+            "plugins.buildmenu.build",
+            "plugins.structure.build",
+            "plugins.breadcrumbs.build",
+            "plugins.include.build",
+            "plugins.markdn.build",
+            "plugins.listviewdetail.build"
+        ]
+    },
+    "main":{
+        "path": "../example2/",
+        "root": "file:///Users/zed/src/heract/example2/out/",
+        "out": "out/",
+        "base": "base",
+        "templates": "templates/",
+        "static_dir": "static/",
+        "structure": "../example2/structure.json",
+        "global": {
+            "static": "file:///Users/zed/src/heract/example2/static/",
+            "root": "file:///Users/zed/src/heract/example2/out/",
+            "title": "Site Example",
+            "debug": "Debug",
+            "contacts": {
+                "address":"1458 TemplateAccess, USA",
+                "tel":"+123-1234-5678",
+                "fax":"+458-4578",
+                "others": "+301 - 0125 - 01258",
+                "email": "mail@yoursitename.com"
+            },
+            "copyright": {
+                "title":"MySite",
+                "path":"http://www.example.com"
+            },
+            "disign": {
+                "title":"Dream",
+                "path":"http://www.dreamtemplate.com/"
+            }
+        }
+    }
+}

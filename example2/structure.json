@@ -1,0 +1,25 @@
+{
+    "index": {
+        "template": "index.html",
+        "comp_name": "Wise<span>Corp</span>",
+        "comp_slogan": "Company Slogan Here",
+
+        "slug": "index_page",
+        "name": "Главная",
+        "navigation": false,
+        "title": "My Static Site",
+        "folder": "blog",
+        "subtitle": "Home Page",
+        "object_list_data": "blog.yaml",
+        "object_list_data_format": "yaml",
+        "object_list_item": {
+            "navigation": false,
+            "subtitle": "Детальный вид",
+            "template": "blog.html",
+            "markdown": "full"
+        },
+        "subitems":{
+
+        }
+    }
+}

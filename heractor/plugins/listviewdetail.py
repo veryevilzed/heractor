@@ -11,7 +11,7 @@ object_list_format = "json"
 и прогружает оттуда данные
 """
 
-import json
+import json, yaml
 
 
 def get_list(root, config, path=""):
@@ -20,7 +20,13 @@ def get_list(root, config, path=""):
         if "skip" in item:
             continue
         if "object_list_data" in item:
-            item["object_list"] = json.load(file(config.get("path", "./") + item["object_list_data"], "r"))
+            if item.get("object_list_data_format", "json") == "json":
+                item["object_list"] = json.load(file(config.get("path", "./") + item["object_list_data"], "r"))
+            elif item.get("object_list_data_format", "json") == "yaml":
+                text = ""
+                for line in file(config.get("path", "./") + item["object_list_data"], "r"):
+                    text += line + "\n"
+                item["object_list"] = yaml.load(text)
             i = 0
             for obj in item["object_list"]:
                 i += 1
