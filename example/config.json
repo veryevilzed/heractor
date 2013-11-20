@@ -10,16 +10,16 @@
         ]
     },
     "main":{
-        "path": "/Users/zed/src/heract/example/",
-        "root": "file:///Users/zed/src/heract/example/out/",
+        "path": "../example/",
+        "root": "file://%(abspath)s/out/",
         "out": "out/",
         "base": "base",
         "templates": "templates/",
         "static_dir": "static/",
-        "structure": "/Users/zed/src/heract/example/structure.json",
+        "structure": "%(abspath)s/structure.json",
         "global": {
-            "static": "file:///Users/zed/src/heract/example/static/",
-            "root": "file:///Users/zed/src/heract/example/out/",
+            "static": "file://%(abspath)s/static/",
+            "root": "file://%(abspath)s/out/",
             "title": "Site Example",
             "debug": "Debug"
         }

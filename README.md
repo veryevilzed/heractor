@@ -1,5 +1,5 @@
 
-HERACTOR v.1.1
+HERACTOR v.1.0
 ==============
 
 Установка
@@ -14,7 +14,8 @@ pip install heractor
 Исполняемый модуль:
 -------------------
 
- heract.py --config=config.json
+ heract --config=config.json
+
 
 
 Конфигурационный фаил (config.json):

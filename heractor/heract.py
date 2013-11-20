@@ -23,9 +23,6 @@ def plugins(config, structure):
     def get_method(string_name):
         _tmp = string_name.split(".")
         modl = __import__(".".join(_tmp[:-1]), globals(), locals(), [], -1)
-        v("modl: %s" % modl)
-        v("getattr: tmp1:%s,   tmp2:%s" % (_tmp[-2], _tmp[-1]))
-
         return getattr(getattr(modl, _tmp[-2]), _tmp[-1])
 
     for path_method in config.get("plugins", []):
@@ -38,9 +35,7 @@ def heract(config):
     """
     Основной метод построения сайта
     """
-    #path = config.get("path", os.path.abspath(os.path.dirname(__file__)))
     path = config.get("path", "")
-    config["path"] = path
     v("Set path %s" % path)
     v("Load structure %s" % config.get("structure", "structure.json"))
     structure = load(file(os.path.join(path, config.get("structure", "structure.json"))))
@@ -62,8 +57,6 @@ def heract(config):
 
             _henv = henv.copy()
             _henv.update(item)
-            #for hkey in item:
-            #    _henv[hkey] = item[hkey]
 
             page_path = os.path.join(file_path, key+".html")
 
@@ -92,9 +85,20 @@ def get_base(base_config, base_section):
         config = {}
 
     config.update(base_config[base_section])
-    #for key in base_config[base_section]:
-    #    config[key] = base_config[base_section][key]
     return config
+
+
+def applay_config_vars(root, config):
+    """
+    Применяет данные конфига к другим элементам этого же конфига :)
+    """
+    for key in root:
+
+        if isinstance(root[key], basestring):
+            print "Applay keys to root %s" % key
+            root[key] = root[key] % config
+        elif isinstance(root[key], dict):
+            applay_config_vars(root[key], config)
 
 
 def preparation_config(config_file, config_section, extra=[]):
@@ -103,8 +107,11 @@ def preparation_config(config_file, config_section, extra=[]):
     """
     v("Load config %s" % config_file)
     config = get_base(load(file(config_file)), config_section)
+    config["path"] = config.get("path", "./")
+    config["abspath"] = os.path.abspath(config["path"])
+    v("abspath:%s" % config["abspath"])
+    applay_config_vars(config, config)
     return config
-
 
 
 def v(text):
