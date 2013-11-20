@@ -22,7 +22,7 @@ def plugins(config, structure):
 
     def get_method(string_name):
         _tmp = string_name.split(".")
-        modl = __import__(".".join(_tmp[:-1]))
+        modl = __import__(".".join(_tmp[:-1]), globals(), locals(), [], -1)
         v("modl: %s" % modl)
         v("getattr: tmp1:%s,   tmp2:%s" % (_tmp[-2], _tmp[-1]))
 

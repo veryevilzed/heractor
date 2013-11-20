@@ -1,12 +1,12 @@
 {
     "base": {
         "plugins": [
-            "heractor.plugins.buildmenu.build",
-            "heractor.plugins.structure.build",
-            "heractor.plugins.breadcrumbs.build",
-            "heractor.plugins.include.build",
-            "heractor.plugins.markdn.build",
-            "heractor.plugins.listviewdetail.build"
+            "plugins.buildmenu.build",
+            "plugins.structure.build",
+            "plugins.breadcrumbs.build",
+            "plugins.include.build",
+            "plugins.markdn.build",
+            "plugins.listviewdetail.build"
         ]
     },
     "main":{

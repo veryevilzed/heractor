@@ -13,7 +13,7 @@ install_requires = [
     ]
 
 setup(name='Heractor',
-      version='1.2',
+      version='1.03',
       description='Static site Creator',
       author='Dmitry Vysochin',
       author_email='dmitry.vysochin@gmail.com',
