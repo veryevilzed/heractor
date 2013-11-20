@@ -1,22 +1,22 @@
 {
     "base": {
         "plugins": [
-            "plugins.buildmenu.build",
-            "plugins.structure.build",
-            "plugins.breadcrumbs.build",
-            "plugins.include.build",
-            "plugins.markdn.build",
-            "plugins.listviewdetail.build"
+            "heractor.plugins.buildmenu.build",
+            "heractor.plugins.structure.build",
+            "heractor.plugins.breadcrumbs.build",
+            "heractor.plugins.include.build",
+            "heractor.plugins.markdn.build",
+            "heractor.plugins.listviewdetail.build"
         ]
     },
     "main":{
-        "path": "../example/",
+        "path": "/Users/zed/src/heract/example/",
         "root": "file:///Users/zed/src/heract/example/out/",
         "out": "out/",
         "base": "base",
         "templates": "templates/",
         "static_dir": "static/",
-        "structure": "../example/structure.json",
+        "structure": "/Users/zed/src/heract/example/structure.json",
         "global": {
             "static": "file:///Users/zed/src/heract/example/static/",
             "root": "file:///Users/zed/src/heract/example/out/",

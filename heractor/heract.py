@@ -23,6 +23,9 @@ def plugins(config, structure):
     def get_method(string_name):
         _tmp = string_name.split(".")
         modl = __import__(".".join(_tmp[:-1]))
+        v("modl: %s" % modl)
+        v("getattr: tmp1:%s,   tmp2:%s" % (_tmp[-2], _tmp[-1]))
+
         return getattr(getattr(modl, _tmp[-2]), _tmp[-1])
 
     for path_method in config.get("plugins", []):

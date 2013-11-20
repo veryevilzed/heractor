@@ -5,6 +5,13 @@ HERACTOR v.1.1
 Установка
 ---------
 
+Простой путь:
+
+```
+pip install -e git+git@git.appforge.ru:<username>/heract.git#egg=Herator
+```
+
+
 Создание виртуального окружения (не обязательно):
 
 ```bash
