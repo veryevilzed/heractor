@@ -8,31 +8,7 @@ HERACTOR v.1.1
 Простой путь:
 
 ```
-pip install -e git+git@git.appforge.ru:<username>/heract.git#egg=Herator
-```
-
-
-Создание виртуального окружения (не обязательно):
-
-```bash
-pip install virtualenv
-virtualenv ./heract
-cd ./heract/
-source ./bin/activate
-git clone http://git.appforge.ru/zed/heract.git ./
-pip install -r ./requirements.txt
-cd ./heractor/
-./heract.py --help
-```
-
-Без виртуального окружения:
-
-```bash
-git clone http://git.appforge.ru/zed/heract.git
-cd ./heract/
-pip install -r ./requirements.txt
-cd ./heractor/
-./heract.py --help
+pip install heractor
 ```
 
 Исполняемый модуль:

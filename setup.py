@@ -13,11 +13,11 @@ install_requires = [
     ]
 
 setup(name='Heractor',
-      version='1.03',
+      version='1.04',
       description='Static site Creator',
       author='Dmitry Vysochin',
       author_email='dmitry.vysochin@gmail.com',
-      url='',
+      url='https://github.com/veryevilzed/heractor',
       install_requires=install_requires,
       packages=['heractor', 'heractor.plugins'],
       entry_points = {
