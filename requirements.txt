@@ -1,4 +1,4 @@
 jinja2
 PyYAML
-markdown
-minify
+markdown2
+yuicompressor

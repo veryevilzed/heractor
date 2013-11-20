@@ -4,7 +4,7 @@
 Компонент вставки данных
 """
 
-import markdown
+import markdown2
 
 
 def get_markdown(root, config, path=""):
@@ -16,7 +16,7 @@ def get_markdown(root, config, path=""):
         for field in item.get("markdown", []):
             if field in item:
                 text = unicode(item[field], "utf-8", errors='ignore')
-                item[field] = markdown.markdown(text)
+                item[field] = markdown2.markdown(text)
 
         get_markdown(item.get("subitems", []), config, path)
 

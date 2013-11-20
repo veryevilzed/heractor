@@ -9,7 +9,7 @@ from distutils.core import setup
 install_requires = [
         'Jinja2',
         'PyYAML',
-        'markdown'
+        'markdown2'
     ]
 
 setup(name='Heractor',
