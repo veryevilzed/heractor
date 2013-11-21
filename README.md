@@ -37,14 +37,13 @@ pip install heractor
 {
     "main":{
         "path": "../example/",
-        "root": "file:///Users/name/src/heract/example/out/",
-        "out": "out/",
-        "templates": "templates/",
-        "static_dir": "static/",
-        "structure": "../example/structure.json",
+        "root": "file://%(abspath)s/out/",
+        "out": "%(path)s/out/",
+        "templates": "%(path)s/templates/",
+        "structure": "%(path)s/structure.json",
         "global": {
-            "static": "file:///Users/name/src/heract/example/static/",
-            "root": "file:///Users/name/src/heract/example/out/",
+            "static": "file://%(abspath)s/static/",
+            "root": "file://%(abspath)s/out/",
             "title": "Supper Static Site"
         },
         "plugins": [
@@ -71,6 +70,9 @@ main, production, debug - секции файла включаются при с
 * plugins - список дополнений расширяющих шаблоны ( см. /heractor/plugins )
 * static_dir - путь к статике (для копирования ее в проект)
 
+Любой корневой элемент секции может служить ключем для string-format
+Так же добавится ключ abspath - абсолютный путь, рекомендуется использовать только для debug
+
 Конфигурационный фаил (structure.json):
 ---------------------------------------
 
@@ -90,7 +92,7 @@ main, production, debug - секции файла включаются при с
                 "name": "О Нас",
                 "navigation": true,
                 "subtitle": "О нас",
-                "include": "data.yaml #about",
+                "include": "%(path)s/data.yaml #about",
                 "include_format": "yaml"
             },
             "contact": {
@@ -98,7 +100,7 @@ main, production, debug - секции файла включаются при с
                 "subtitle": "Контактная информация",
                 "name": "Контакты",
                 "navigation": true,
-                "include": "data.yaml #contact",
+                "include": "%(path)s/data.yaml #contact",
                 "include_format": "yaml"
             }
         }
@@ -108,7 +110,7 @@ main, production, debug - секции файла включаются при с
         "subtitle": "Скрытая страница",
         "name": "Скрытая",
         "navigation": false,
-        "include": "../README.md",
+        "include": "%(path)s/../README.md",
         "include_format": "text",
         "markdown": ["include"]
     }
@@ -131,6 +133,7 @@ main, production, debug - секции файла включаются при с
 * include_format - формат данных
 * markdown - поля на которые нужно наложить markdown
 
+Любой корневой элемент секции config.json может служить ключем для string-format полей structure.json
 
 Структура сайта:
 

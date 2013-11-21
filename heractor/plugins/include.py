@@ -15,7 +15,7 @@ def get_datas(root, config, path=""):
 
         if "include" in item:
             data_format = item.get("include_format", "json")
-            file_name = path + item["include"]
+            file_name = item["include"] % config
 
             if "#" in file_name:
                 _tmp = file_name.split("#")

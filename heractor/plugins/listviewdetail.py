@@ -21,10 +21,10 @@ def get_list(root, config, path=""):
             continue
         if "object_list_data" in item:
             if item.get("object_list_data_format", "json") == "json":
-                item["object_list"] = json.load(file(config.get("path", "./") + item["object_list_data"], "r"))
+                item["object_list"] = json.load(file(item["object_list_data"] % config, "r"))
             elif item.get("object_list_data_format", "json") == "yaml":
                 text = ""
-                for line in file(config.get("path", "./") + item["object_list_data"], "r"):
+                for line in file(item["object_list_data"] % config, "r"):
                     text += line + "\n"
                 item["object_list"] = yaml.load(text)
             i = 0

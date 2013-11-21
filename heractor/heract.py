@@ -35,11 +35,11 @@ def heract(config):
     """
     Основной метод построения сайта
     """
-    path = config.get("path", "")
+    path = config.get("path", "./")
     v("Set path %s" % path)
     v("Load structure %s" % config.get("structure", "structure.json"))
-    structure = load(file(os.path.join(path, config.get("structure", "structure.json"))))
-    jinja_env = Environment(loader=FileSystemLoader(os.path.join(path, config.get("templates", "")), encoding='utf-8'),
+    structure = load(file(config.get("structure", "structure.json")))
+    jinja_env = Environment(loader=FileSystemLoader(config.get("templates", ""), encoding='utf-8'),
                             autoescape=True)
 
     plugins(config, structure) # Подключим модули
@@ -74,7 +74,7 @@ def heract(config):
                       file_path=os.path.join(file_path, item.get("folder", key)+"/"))
 
     build(structure, config, jinja_env, {}, url_path=config.get("root", "/"),
-          file_path=os.path.join(path, config.get("out", "./")))
+          file_path=config.get("out", "./"))
 
 
 def get_base(base_config, base_section):
